@@ -1,0 +1,73 @@
+<div class="profile-authentication-area">
+  <div class="d-table">
+      <div class="d-table-cell">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-6 col-md-12">
+                      <div class="login-form">
+                          <h2>Login</h2>
+                          <form [formGroup]="loginFormGroup" (ngSubmit)="login()">
+                              <div class="form-group">
+                                  <input formControlName="username" type="text" class="form-control" placeholder="Username or email">
+                              </div>
+                              <div class="form-group">
+                                  <input formControlName="password" type="password" class="form-control" placeholder="Password">
+                              </div>
+                              <div class="row align-items-center">
+                                  <div class="col-lg-6 col-md-6 col-sm-6 remember-me-wrap">
+
+                                  </div>
+                                  <div class="col-lg-6 col-md-6 col-sm-6 lost-your-password-wrap">
+                                      <a href="#" (click) = "navigateByResetPassword($event)" class="lost-your-password">Lost your password?</a>
+                                  </div>
+                              </div>
+                              <button type="submit">Login</button>
+                          </form>
+
+                      </div>
+                  </div>
+                  <div class="col-lg-6 col-md-12">
+                      <div class="register-form">
+                          <h2>Register</h2>
+                          <form [formGroup]="registrazioneFormGroup" (ngSubmit)="registra()">
+                              <div class="form-group">
+                                  <input type="text" class="form-control" placeholder="Inserire nome" formControlName="nome" required>
+                              </div>
+                              <div class="form-group">
+                                  <input type="text" class="form-control" placeholder="Inserire cognome"  formControlName="cognome" required>
+                              </div>
+                              <div class="form-group">
+                                  <input type="email" class="form-control" placeholder="Email Address" formControlName="email" required>
+                              </div>
+                           
+                               <input  type="hidden" value="20" formControlName="loyalty">
+
+                              <div class="form-group">
+                                  <input type="text" class="form-control" placeholder="Inserire username" formControlName="username" required>
+                              </div>
+
+                              <div class="form-group">
+                                  <input type="text" class="form-control" placeholder="Inserire coupon (facoltativo)" formControlName="couponCode" required>
+                              </div>
+
+                              <div class="form-group">
+                                  <input type="password" class="form-control" placeholder="Password" formControlName="password" required>
+                              </div>
+
+                              <div class="form-group">
+                                  <input type="password" class="form-control" placeholder="Reinserire password" formControlName="passwordValidazione" required>
+                              </div>
+                              
+                              <input type="hidden" formControlName="ruolo"
+                              value="Cliente">
+
+                              <button type="submit" >Register</button>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <a routerLink="/" class="back-icon"><i class="icofont-close"></i></a>
+</div>
