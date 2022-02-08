@@ -1,0 +1,35 @@
+<ul ngbNav #nav="ngbNav" [activeId]="2" class="nav-tabs justify-content-center">
+  <li [ngbNavItem]="0">
+    LOGO
+  </li>
+  <li [ngbNavItem]="1">
+    <a ngbNavLink>GET MENU</a>
+    <ng-template ngbNavContent>
+      <app-mostra-menu></app-mostra-menu>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="2">
+    <a ngbNavLink>CARRELLO</a>
+    <ng-template ngbNavContent>
+      <app-cart></app-cart>
+    </ng-template>
+  </li>
+  <li ngbDropdown class="nav-item">
+    <a href (click)="false" class="nav-link" ngbDropdownToggle>Dropdown</a>
+    <div ngbDropdownMenu>
+      <button ngbDropdownItem>Action</button>
+      <button ngbDropdownItem>Another action</button>
+      <button ngbDropdownItem>Something else here</button>
+      <div class="dropdown-divider"></div>
+      <button ngbDropdownItem>Separated link</button>
+    </div>
+  </li>
+  <li ngbNavItem class="ml-auto">
+    <a ngbNavLink>Disabled</a>
+    <ng-template ngbNavContent>
+      <app-admin-page></app-admin-page>
+    </ng-template>
+  </li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
