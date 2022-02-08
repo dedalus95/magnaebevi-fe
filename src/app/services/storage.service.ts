@@ -55,6 +55,17 @@ export class StorageService {
 
   }
 
+  public getCartIds() {
+    let cart: any = localStorage.getItem("cart");
+    let parsed = JSON.parse(cart)['carrello'];
+    let arrayOfIds = [];
+    for(let i = 0; i < parsed.length; i++) {
+     arrayOfIds.push(parsed[i].id);
+    }
+      alert(arrayOfIds);
+      return arrayOfIds;
+  } 
+
   public removeFromCart(index:number){
     let cart = this.getCart();
     
@@ -80,9 +91,8 @@ export class StorageService {
 
   public addQuantitaToProdotto(index:number, quantita:number){
     let cart = this.getCart();
-    cart.carrello[index].quantita= quantita;
+    cart.carrello[index].quantita = quantita;
     localStorage.setItem("cart",JSON.stringify(cart));
-    debugger;
     return cart;
   }
 
@@ -90,7 +100,9 @@ export class StorageService {
     let cart = this.getCart();
     let totaleSpesa = 0;
     for(let i = 0; i<cart.carrello.length; i++){
-      totaleSpesa+= cart.carrello[i].prezzo * cart.carrello[i].quantita;
+      if(cart.carrello[i] != null) {
+      totaleSpesa+= parseFloat(cart.carrello[i].prezzo);
+      }
     }
     return totaleSpesa;
   }

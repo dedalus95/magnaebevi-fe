@@ -11,7 +11,8 @@ let magna_const = {
       beurl: 'http://localhost:8080',
       beUrlLogin: "http://localhost:8080/api/v1/login/",
       beUrlMenu: "http://localhost:8080/api/v1/magnabevi/menu/",
-      beUrlOrdini: "http://localhost:8080/api/v1/magnabevi/ordine/"
+      beUrlOrdini: "http://localhost:8080/api/v1/magnabevi/ordine/",
+      beUrlImg: "http://localhost:8080/api/v1/magnabevi/img/"
   },
 
   hideNavbar: [

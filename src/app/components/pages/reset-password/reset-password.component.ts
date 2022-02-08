@@ -17,7 +17,6 @@ export class ResetPasswordComponent implements OnInit {
 
   reset() {
     let currentForm = this.resetFormGroup;
-    let hasHappened = false;
     this.utenteService.resetPassword(currentForm.value.username).subscribe(res => {
       alert('reset avvenuto con successo, controlla la tua mail! 🥳')
     }, err => {

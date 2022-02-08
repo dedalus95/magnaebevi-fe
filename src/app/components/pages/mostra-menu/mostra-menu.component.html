@@ -1,0 +1,76 @@
+<div *ngIf="menu && menu.tipologia">
+  <h1>{{menu.tipologia}}</h1>
+
+  <div *ngFor="let sezione of menu.sezioni">
+    <div class="container mx-auto mt-4">
+      <h2>{{sezione.label}}</h2>
+      <div class="row">
+        <div *ngFor="let item of sezione.items">
+          <div *ngIf="item.disponibile == true">
+            <div class="col-md-4">
+              <div class="card" style="width: 18rem;">
+                <img [src]="imgUrl" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.nome}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{item.prezzo}}</h6>
+                  <p class="card-text">{{item.descrizione}}</p>
+                  <button class = 'btn btn-primary' (click)="addToCart(item)">Aggiungi al carrello</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- <div class="card">
+            <h5 class="card-header">{{item.nome}}</h5>
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">{{item.descrizione}}</p>
+              <p class="card-text">{{item.prezzo}}</p>
+              <a href="#" class="btn btn-primary">Aggiungi al carrello</a>
+            </div>
+          </div>
+
+           -->
+
+  <!-- Default Restaurant Menu for Home Demo 1 & 5 -->
+
+  <!-- >
+            <ngx-tabset>
+ 
+                <ngx-tab tabTitle="{{sezione.label}}" *ngFor="let sezione of menu.sezioni">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12" *ngFor="let item of sezione.items">
+                            <div class="single-menu">
+                                <div class="food-menu-img">
+                                    <img src="assets/img/menu-img3.jpg" alt="food-img">
+                                </div>
+                                <div class="food-menu-content">
+                                    <h3>{{item.nome}}<span class="menu-price">{{item.prezzo}} €</span></h3>
+                                         <ul>
+                                        <li>Juice Fruit</li>
+                                        <li>Cherry</li>
+                                        <li>Vegetable</li>
+                                        <li>Milk</li>
+                                        <li>Potato</li>
+                                        <li>Tomato</li>
+                                        <li>Chilli</li>
+                                        <li>Sesame</li>
+                                    </ul>  
+                                    <button class = 'btn btn-primary' (click)="addToCart(item)">Aggiungi al carrello</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </ngx-tab>
+           
+            </ngx-tabset>
+        </div> -->

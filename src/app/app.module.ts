@@ -11,6 +11,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomepageComponent } from './components/pages/homepage/homepage.component';
 import { ResetPasswordComponent } from './components/pages/reset-password/reset-password.component';
 import { CambiaPasswordComponent } from './components/pages/cambia-password/cambia-password/cambia-password.component';
+import { NavbarComponent } from './components/common/navbar/navbar.component';
+import { MostraMenuComponent } from './components/pages/mostra-menu/mostra-menu.component';
+import { TabsModule } from 'ngx-tabset';
+import { CartComponent } from './components/pages/cart/cart.component';
+import { ModalComponent } from './components/common/modale/modale.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +24,11 @@ import { CambiaPasswordComponent } from './components/pages/cambia-password/camb
     AdminPageComponent,
     HomepageComponent,
     ResetPasswordComponent,
-    CambiaPasswordComponent
+    CambiaPasswordComponent,
+    NavbarComponent,
+    MostraMenuComponent,
+    CartComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +36,8 @@ import { CambiaPasswordComponent } from './components/pages/cambia-password/camb
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
